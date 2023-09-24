@@ -1,0 +1,8 @@
+# ninja log v5
+27	2762	7172326084674329	CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.obj	7612b022916803f4
+16	2777	7172326085004455	CMakeFiles/Taller1.dir/Cancion.cpp.obj	d3dae5112b04f24e
+224	4596	7172345134282357	CMakeFiles/Taller1.dir/main.cpp.obj	297fa55c777887e8
+10	1068	7172350729113355	CMakeFiles/Taller1.dir/Sistema.cpp.obj	d082d1c5ede0f0a8
+9	704	7172982319094019	build.ninja	105d40ab2379a9da
+329	4605	7172345134492409	CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.obj	867b8031a65a791b
+1069	1256	7172350730950478	Taller1.exe	785b064b1b5a1b7a
