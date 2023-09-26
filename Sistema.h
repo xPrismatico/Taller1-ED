@@ -12,10 +12,10 @@ class Sistema {
 private:
     ListaNodoCircularDoble listaReproducciones;
     // Crear un vector de punteros a Cancion
-    vector<Cancion*> listaCanciones;
+    Cancion* listaCanciones;
 
 public:
-    Sistema(ListaNodoCircularDoble listaReproducciones, vector<Cancion*> listaCanciones);
+    //Sistema(ListaNodoCircularDoble listaReproducciones, Cancion* listaCanciones);
     Sistema();
 
     void lecturaArchivo();

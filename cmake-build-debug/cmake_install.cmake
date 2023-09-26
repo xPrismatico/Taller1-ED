@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/srfue/Desktop/UCN/2023 2 Semestre/Estructura de Datos/Codigos/Talleres/Taller1
+# Install script for directory: C:/Users/srfue/Desktop/UCN/2023 2 Semestre/Estructura de Datos/Codigos/Talleres/Taller1-ED
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/srfue/Desktop/UCN/2023 2 Semestre/Estructura de Datos/Codigos/Talleres/Taller1/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/srfue/Desktop/UCN/2023 2 Semestre/Estructura de Datos/Codigos/Talleres/Taller1-ED/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

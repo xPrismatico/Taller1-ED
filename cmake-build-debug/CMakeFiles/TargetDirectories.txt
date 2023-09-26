@@ -1,3 +1,3 @@
-C:/Users/srfue/Desktop/UCN/2023 2 Semestre/Estructura de Datos/Codigos/Talleres/Taller1/cmake-build-debug/CMakeFiles/Taller1.dir
-C:/Users/srfue/Desktop/UCN/2023 2 Semestre/Estructura de Datos/Codigos/Talleres/Taller1/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/srfue/Desktop/UCN/2023 2 Semestre/Estructura de Datos/Codigos/Talleres/Taller1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/srfue/Desktop/UCN/2023 2 Semestre/Estructura de Datos/Codigos/Talleres/Taller1-ED/cmake-build-debug/CMakeFiles/Taller1.dir
+C:/Users/srfue/Desktop/UCN/2023 2 Semestre/Estructura de Datos/Codigos/Talleres/Taller1-ED/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/srfue/Desktop/UCN/2023 2 Semestre/Estructura de Datos/Codigos/Talleres/Taller1-ED/cmake-build-debug/CMakeFiles/rebuild_cache.dir

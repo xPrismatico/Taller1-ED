@@ -6,13 +6,13 @@
 #include <sstream>
 #include "Sistema.h"
 #include "ListaNodoCircularDoble.h"
-#include <vector>
-
-Sistema::Sistema(ListaNodoCircularDoble listaReproducciones, vector<Cancion*> listaCanciones) {
+//#include <vector>
+/*
+Sistema::Sistema(ListaNodoCircularDoble listaReproducciones, Cancion* listaCanciones) {
     this->listaReproducciones = listaReproducciones;
     this->listaCanciones = listaCanciones;
 }
-
+*/
 Sistema::Sistema() {
 }
 
@@ -178,16 +178,17 @@ void Sistema::lecturaArchivo() {
     }
 
     // Recorrer linea por linea
-    int tamanio = 0;
+    int tamanio = 1;
     string linea;
     //VOY A CREAR EL VECTOR DE CANCIONES
-
+    listaCanciones = (Cancion*)malloc(tamanio*sizeof(Cancion));
 
     //CREADO
 
     while (getline(archivo, linea)) {
         string nombre, artista;
-        int reproducciones, duracion;
+        int reproducciones;
+        int duracion;
 
         stringstream input_ss(linea);
 
@@ -201,18 +202,27 @@ void Sistema::lecturaArchivo() {
 
         // Crear una nueva Cancion y agregarla al vector
         Cancion* nuevaCancion = new Cancion(nombre, artista, reproducciones, duracion);
-
-        this->listaCanciones.push_back(nuevaCancion);
+        tamanio++;
+        cout << sizeof(Cancion) << endl;
+        listaCanciones = (Cancion*)realloc(listaCanciones,tamanio*sizeof(Cancion));
+        //*(listaCanciones+(tamanio-1)*sizeof(Cancion))= *nuevaCancion;
+        listaCanciones[tamanio-1] = *nuevaCancion;
         //CANCION AÑADIDA AL VECTOR
+
     }
     archivo.close();
-
+    for (int i=1;i<=4;i++){
+        cout << listaCanciones[i].getNombre() << endl;
+    }
     // Canciones almacenadas en el vectorCanciones
 
     // Imprimir los nombres de las canciones
-    for (const Cancion* cancion : this->listaCanciones) {
+    /*
+    for (const Cancion* cancion : listaCanciones) {
         cout << "Nombre de la cancion: " << cancion->getNombre() << endl;
     }
+    */
+
     /*
     // Liberar la memoria de las canciones al terminar
     for (Cancion* cancion : this->listaCanciones) {
