@@ -1,4 +1,5 @@
 #include "Sistema.h"
+#include "ListaNodoCircularDoble.h"
 
 int main() {
     Sistema sistema;

@@ -9,6 +9,19 @@ ListaNodoCircularDoble::ListaNodoCircularDoble() {
     this->cantCanciones = 0;
 }
 
+void ListaNodoCircularDoble::mostrarCanciones(){
+    if (cantCanciones == 0){
+        cout << "N.A. | N.A. | N.A" << endl;
+        cout << "N.A. | N.A. | N.A" << endl;
+    }
+    else{
+        cout << "| "<< this->cabeza->getAnterior()->getCancion().getNombre();
+        cout << " | " << this->cabeza->getCancion().getNombre();
+        cout << " | " << this->cabeza->getSiguiente()->getCancion().getNombre() << " |" <<endl;
+    }
+    return;
+}
+
 void ListaNodoCircularDoble::agregar(Cancion& cancion) {
     NodoDobleCircular* nodo = new NodoDobleCircular(cancion);
 
@@ -20,7 +33,7 @@ void ListaNodoCircularDoble::agregar(Cancion& cancion) {
         return;
     }
 
-    //
+    // Si solo hay 1 elemento
     if(this->cabeza->getSiguiente() == this->cabeza){
         this->cabeza->setAnterior(nodo);
         this->cabeza->setSiguiente(nodo);
@@ -30,6 +43,7 @@ void ListaNodoCircularDoble::agregar(Cancion& cancion) {
         return;
     }
 
+    // Si hay mas de 1 elemento
     NodoDobleCircular* aux = this->cabeza;
     while (aux->getSiguiente() != this->cabeza){
         aux = aux->getSiguiente();

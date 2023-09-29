@@ -13,24 +13,22 @@ class Cancion {
 private:
     string nombre;
     string artista;
-    int reproducciones;
-    int duracion;
+    string reproducciones;
+    string duracion;
 
 public:
-    Cancion(string nombre, string artista, int reproducciones, int duracion);
+    Cancion(string nombre, string artista, string reproducciones, string duracion);
     Cancion();
 
     string getNombre() const;
     string getArtista();
-    int getReproducciones();
-    int getDuracion();
+    string getReproducciones();
+    string getDuracion();
 
     void setNombre(string nombre);
     void setArtista(string artista);
-    void setReproducciones(int reproducciones);
-    void setDuracion(int duracion);
+    void setReproducciones(string reproducciones);
+    void setDuracion(string duracion);
 
 };
-
-
 #endif //TALLER1_CANCION_H

@@ -4,7 +4,7 @@
 
 #include "Cancion.h"
 
-Cancion::Cancion(string nombre, string artista, int reproducciones, int duracion) {
+Cancion::Cancion(string nombre, string artista, string reproducciones, string duracion) {
     this->nombre = nombre;
     this->artista = artista;
     this->reproducciones = reproducciones;
@@ -14,30 +14,31 @@ Cancion::Cancion(string nombre, string artista, int reproducciones, int duracion
 Cancion::Cancion() {
 }
 
+// GETTERS
 string Cancion::getNombre() const {
     return nombre;
 }
 string Cancion::getArtista() {
     return artista;
 }
-int Cancion::getReproducciones() {
+string Cancion::getReproducciones() {
     return reproducciones;
 }
-int Cancion::getDuracion() {
+string Cancion::getDuracion() {
     return duracion;
 }
 
-
+// SETTERS
 void Cancion::setNombre(string nombre) {
     this->nombre = nombre;
 }
 void Cancion::setArtista(string artista){
     this->artista = artista;
 }
-void Cancion::setReproducciones(int reproducciones) {
+void Cancion::setReproducciones(string reproducciones) {
     this->reproducciones = reproducciones;
 }
-void Cancion::setDuracion(int duracion) {
+void Cancion::setDuracion(string duracion) {
     this->duracion = duracion;
 }
 

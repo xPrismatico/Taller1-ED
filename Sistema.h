@@ -6,13 +6,12 @@
 #define TALLER1_SISTEMA_H
 #include "Cancion.h"
 #include "ListaNodoCircularDoble.h"
-#include <vector>
 
 class Sistema {
 private:
     ListaNodoCircularDoble listaReproducciones;
-    // Crear un vector de punteros a Cancion
-    Cancion* listaCanciones;
+    Cancion *listaCanciones;
+    int tamanioActual;
 
 public:
     //Sistema(ListaNodoCircularDoble listaReproducciones, Cancion* listaCanciones);
@@ -26,6 +25,7 @@ public:
     void Agregar();
     void eliminar();
     void salir();
+
 };
 
 

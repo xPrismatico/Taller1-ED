@@ -15,16 +15,17 @@ private:
 public:
     ListaNodoCircularDoble();
 
+    void mostrarCanciones();
     void agregar(Cancion& cancion);
     void eliminar(string nombreCancion);
 
-   void moverAnterior();
-   void moverSiguiente();
-   bool buscarCancion(string nombre);
-   void contenidoLista();
+    void moverAnterior();
+    void moverSiguiente();
+    bool buscarCancion(string nombre);
+    void contenidoLista();
 
-   int getCantCanciones();
-   NodoDobleCircular* getCabeza();
+    int getCantCanciones();
+    NodoDobleCircular* getCabeza();
 
 };
 
