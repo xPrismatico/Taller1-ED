@@ -11,13 +11,19 @@ ListaNodoCircularDoble::ListaNodoCircularDoble() {
 
 void ListaNodoCircularDoble::mostrarCanciones(){
     if (cantCanciones == 0){
-        cout << "N.A. | N.A. | N.A" << endl;
-        cout << "N.A. | N.A. | N.A" << endl;
+        cout << "| N.A. | N.A. | N.A |" << endl;
+        cout << "| N.A. | N.A. | N.A |" << endl;
+        cout << "| <|-- |  []  | --|> |" << endl;
     }
     else{
         cout << "| "<< this->cabeza->getAnterior()->getCancion().getNombre();
         cout << " | " << this->cabeza->getCancion().getNombre();
         cout << " | " << this->cabeza->getSiguiente()->getCancion().getNombre() << " |" <<endl;
+        cout << "| "<< this->cabeza->getAnterior()->getCancion().getArtista();
+        cout << " | " << this->cabeza->getCancion().getArtista();
+        cout << " | " << this->cabeza->getSiguiente()->getCancion().getArtista() << " |" <<endl;
+
+        cout << "| <|-- |  []  | --|> |" << endl;
     }
     return;
 }
@@ -30,6 +36,7 @@ void ListaNodoCircularDoble::agregar(Cancion& cancion) {
         this->cabeza = nodo;
         this->cabeza->setSiguiente(this->cabeza);
         this->cabeza->setAnterior(this->cabeza);
+        this->cantCanciones++;
         return;
     }
 
@@ -40,6 +47,7 @@ void ListaNodoCircularDoble::agregar(Cancion& cancion) {
         nodo->setSiguiente(this->cabeza);
         nodo->setAnterior(this->cabeza);
         this->cabeza = nodo;
+        this->cantCanciones++;
         return;
     }
 
@@ -113,32 +121,41 @@ void ListaNodoCircularDoble::eliminar(string nombreCancion) {
 }
 
 void ListaNodoCircularDoble::moverAnterior() {
+    if (this->cabeza == nullptr){
+        cout << "[!] No hay ninguna cancion en la lista de reproduccion";
+        return;
+    }
     this->cabeza = this->cabeza->getAnterior();
     return;
 }
 
 void ListaNodoCircularDoble::moverSiguiente() {
+    if (this->cabeza == nullptr){
+        cout << "[!] No hay ninguna cancion en la lista de reproduccion";
+        return;
+    }
     this->cabeza = this->cabeza->getSiguiente();
     return;
 }
 
 
-bool ListaNodoCircularDoble::buscarCancion(std::string nombre) {
+//TODO: Arreglar! A veces no detecta que ya esta la cancion
+bool ListaNodoCircularDoble::buscarCancion(string nombre) {
     if(this->cabeza == nullptr){ // si la cabeza es nula
-        return false;
+        return false; // NO ESTÁ
+    }
+    if(this->cabeza->getCancion().getNombre() == nombre){
+        return true; // SI ESTÁ
     }
 
-    NodoDobleCircular* actual = cabeza; //auxiliar par arecorrer la lista
-
+    NodoDobleCircular* actual = this->cabeza; //auxiliar par arecorrer la lista
     while(actual->getSiguiente() != this->cabeza){
-
-        if(actual->getCancion().getNombre() == nombre){ //Comparo el nombre de la cancion del nodo actual sea igual a la entregada
-            return true;
-        }
-
         actual = actual->getSiguiente(); //Avanza el auxiliar al siguiente
+        if(actual->getCancion().getNombre() == nombre){ //Comparo el nombre de la cancion del nodo actual sea igual a la entregada
+            return true; // SI ESTÁ
+        }
     }
-    return false; //retorna false si no lo encuentra
+    return false; //retorna false si no lo encuentra en la lista
 }
 
 
