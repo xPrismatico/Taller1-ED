@@ -2,13 +2,15 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
+#include <unistd.h>
 #include "Sistema.h"
 #include "ListaNodoCircularDoble.h"
 
 Sistema::Sistema() {
 }
 
-void Sistema::menu() {
+//LISTO?
+void Sistema::menu(){
     lecturaArchivo();
 
     // MENU
@@ -39,24 +41,27 @@ void Sistema::menu() {
             eliminar();
         }
         else if(Respuesta == "5") {
-            salir();
+            guardarArchivo();
+
+            cout << "\nHas salido del reproductor correctamente.\n";
             return;
         }
         else {
-            cout << "\n[!] Ingrese una opcion valida! \n" << endl;
+            cout << "\n[!] Error: Ingrese una opcion valida! \n" << endl;
         }
     }
 }
 
-
+//LISTO
 void Sistema::Anterior() {
     this->listaReproducciones.moverAnterior();
 }
-
+//LISTO
 void Sistema::Siguiente() {
     this->listaReproducciones.moverSiguiente();
 }
 
+//FALTA?
 void Sistema::Agregar() {
     string opcion;
 
@@ -69,7 +74,9 @@ void Sistema::Agregar() {
 
         cout << "\nIngrese una opcion: ";
         cin >> opcion;
+
         if(opcion == "1"){ // AGREGAR CANCION AL SISTEMA
+
             // Nombre Cancion
             string nombreCancion;
             cout << "\nIngresa el nombre de la cancion: ";
@@ -90,6 +97,7 @@ void Sistema::Agregar() {
             cout << "\nIngresa los minutos y segundos de duracion de la cancion en el formato (mm:ss): "; //TODO: Hacer que tenga que contener ':' si o si ??
             cin >> duracion;
 
+            //TODO: Validar STRING como ints minutos segundos
             int minutos;
             int segundos;
             stringstream input_ss(duracion);
@@ -113,14 +121,16 @@ void Sistema::Agregar() {
             listaCanciones[this->tamanioActual-1] = *agregarCancion;
 
             cout << "\nAgregando cancion al sistema... Espere unos segundos..." << endl;
-            // TODO: Tiempo Espera : (60*minutos + segundos)/20 ); // Se debe calcular a seguindos y hacer la espera
+            int espera = (((60*minutos)+segundos)/20);
+            sleep(espera);
             cout << "\nLa cancion ha sido agregada al sistema con exito!" << endl;
         }
 
         // AGREGAR CANCION A LA LISTA REPRODUCCIONES
-        //TODO: Hacer que se IMPRIMAN las Canciones de listaCanciones (Sistema) que NO estan en listaReproducciones
-        //TODO: Se agregan las canciones de la listaCanciones (sistema) SEGUN EL NUMERO DE SU POSICION, NO SEGUN SU NOMBRE (segun taller)
+        //TODO: Hacer que se IMPRIMAN las Canciones de listaCanciones (Sistema) que NO ESTAN AÚN en listaReproducciones
         else if(opcion == "2"){
+
+            // IMPRIMIR LISTA CANCIONES DEL SISTEMA
             for (int i=1; i<tamanioActual;i++){
                 cout << "\n[" << i << "]";
                 cout << "Nombre: " <<listaCanciones[i].getNombre()<<endl;
@@ -128,75 +138,73 @@ void Sistema::Agregar() {
                 cout << "   Cantidad de reproducciones: " <<listaCanciones[i].getReproducciones()<<endl;
                 cout << "   Duracion: " <<listaCanciones[i].getDuracion()<<endl;
             }
-            string nombreCancion;
-            cout << "\nIngresa el nombre de la cancion: ";
-            cin >> nombreCancion;
-            if(this->listaReproducciones.buscarCancion(nombreCancion)){ // compara que la cancion no se encuentre en la lista
-                cout << "\n[!] La cancion ya se encuentra en la lista de reproduccion\n" << endl;
-                return;
+
+
+            int posicionCancion;
+            cout << "\nIngresa el numero de la posicion de la cancion que quieres agregar a la lista de reproduccion: ";
+            cin >> posicionCancion;
+
+            //TODO: Falta VALIDAR el int si se ingresa STRING
+
+            if (posicionCancion >= tamanioActual || posicionCancion <= 0){
+                cout << "\n[!] Error: La posicion ingresada no se encuentra en la lista!\n"<<endl;
             }
 
             // AGREGAR CANCION DE SISTEMA A REPRODUCCIONES
-            for(int i=1; i<=tamanioActual; i++){
-                if (listaCanciones[i].getNombre() == nombreCancion) { //compara el nombre de la cancion en la poscion tamanio con el entregado por pantalla
-                    this->listaReproducciones.agregar(listaCanciones[i]); // agrega la cancion que esta en una lista a la otra
-                    cout << "\nLa cancion "<< listaReproducciones.getCabeza()->getCancion().getNombre() <<" ha sido agregada exitosamente\n" << endl;
+            for(int i=1; i<=tamanioActual-1; i++){
+                if (i == posicionCancion) { //compara la posicion de la cancion actual con la entregado por pantalla
+                    this->listaReproducciones.agregar(listaCanciones[posicionCancion]); // agrega la cancion que esta en una lista a la otra
+                    cout << "\nLa cancion "<<"[" << posicionCancion << "] " << listaReproducciones.getCabeza()->getCancion().getNombre() <<" ha sido agregada exitosamente\n" << endl;
                     return;
                 }
+                //avanza
             }
-            // NO ESTA EN LISTA CANCIONES (SISTEMA)
-            cout << "\n[!] La cancion ingresada no se encuentra en el sistema!"<<endl;
         }
+
+        // VOLVER AL MENU
         else if(opcion == "3"){
             return;
         }
+
+        //OPCION NO VALIDA
         else{
-            cout << "\n[!] Ingresa una opcion valida !\n" << endl;
+            cout << "\n[!] Error: Ingresa una opcion valida !\n" << endl;
         }
     }
 
 }
-
+//LISTO
 void Sistema::eliminar() {
-    string nombreEliminar;
-    NodoDobleCircular* actual = listaReproducciones.getCabeza();
-
-    if(actual == nullptr){
-        cout << "\n[!] La lista esta vacia\n"<< endl;
+    bool mostrar = this->listaReproducciones.mostrarLista(); //Muestra todas las canciones de la lista Reproduccion
+    if (mostrar == false){
         return;
     }
 
-    while(actual->getSiguiente() != listaReproducciones.getCabeza()){
-        cout << "Nombre"<<actual->getCancion().getNombre()<< endl;
-        cout << "Artista"<<actual->getCancion().getArtista()<< endl;
-        cout << "Reproducciones"<<actual->getCancion().getReproducciones()<< endl;
-        cout << "Duracion"<<actual->getCancion().getDuracion()<< endl;
+    int posEliminar;
+    cout << "\nIngresa el numero de la posicion de la cancion a eliminar: ";
+    cin >> posEliminar;
 
-        actual = actual->getSiguiente();
+    if (posEliminar > listaReproducciones.getCantCanciones() || posEliminar <= 0){
+        cout << "\n[!] Error: La posicion ingresada no se encuentra en la lista!\n"<< endl;
     }
 
-
-    cout << "\nIngresa el nombre de la cancion a eliminar:  ";
-    cin >> nombreEliminar;
-
-    if(this->listaReproducciones.buscarCancion(nombreEliminar) == true){
-        this->listaReproducciones.eliminar(nombreEliminar);
-    }
-    else{
-        cout<<"\n[!] El nombre ingresado no esta en la lista\n"<<endl;
-    }
-
+    this->listaReproducciones.eliminar(posEliminar); // elimino la cancion en esa posicion
 }
 
-void Sistema::salir() {
-    cout << "\nHas salido del reproductor correctamente.\n";
+
+// FALTA
+void Sistema::guardarArchivo() {
+
+
+
+    cout << "Se han guardado los cambios del archivo de musica"<< endl;
 }
 
 
 /**
  * LECTURA DE ARCHIVO
  */
-
+//LISTO
 void Sistema::lecturaArchivo() {
     ifstream archivo;
     archivo.open("musica.txt"); // Abrir TXT
@@ -219,8 +227,8 @@ void Sistema::lecturaArchivo() {
         string reproducciones;
         string duracion;
 
-        stringstream input_ss(linea); // TODO: Hacer otro stringstream para leer el String de duracion y partirlos por ':'
-        //TODO: string como puntero o vector de char
+        stringstream input_ss(linea); //Opcional: Hacer otro stringstream para leer el String de duracion y partirlos por ':'
+        //Opcional: string como puntero o vector de char
 
 
         getline(input_ss, nombre, ';');
@@ -246,7 +254,6 @@ void Sistema::lecturaArchivo() {
 
         // Crear una nueva Cancion con los datos de la linea
         Cancion* nuevaCancion = new Cancion(nombre,artista,reproducciones,duracion);
-        //cout << nombre << artista << reproducciones << duracion <<endl;
 
         //tamanio++; // Variable para aumentar tamaño de la lista para guardarle espacio
         // Redimensionar listaCanciones con el Nuevo tamanio

@@ -17,12 +17,13 @@ public:
 
     void mostrarCanciones();
     void agregar(Cancion& cancion);
-    void eliminar(string nombreCancion);
+    void eliminar(int posCancion);
 
     void moverAnterior();
     void moverSiguiente();
-    bool buscarCancion(string nombre);
-    void contenidoLista();
+
+    bool mostrarLista();
+    bool buscar(int posicion);
 
     int getCantCanciones();
     NodoDobleCircular* getCabeza();

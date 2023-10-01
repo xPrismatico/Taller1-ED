@@ -25,6 +25,7 @@ public:
     void Agregar();
     void eliminar();
     void salir();
+    void guardarArchivo();
 
 };
 

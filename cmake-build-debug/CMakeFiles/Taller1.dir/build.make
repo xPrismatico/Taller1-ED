@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "D:\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "D:\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\GitHub\Proyectos\Taller1-ED
+CMAKE_SOURCE_DIR = "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\GitHub\Proyectos\Taller1-ED\cmake-build-debug
+CMAKE_BINARY_DIR = "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\cmake-build-debug"
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Taller1.dir/depend.make
@@ -69,74 +69,74 @@ include CMakeFiles/Taller1.dir/progress.make
 include CMakeFiles/Taller1.dir/flags.make
 
 CMakeFiles/Taller1.dir/main.cpp.obj: CMakeFiles/Taller1.dir/flags.make
-CMakeFiles/Taller1.dir/main.cpp.obj: D:/GitHub/Proyectos/Taller1-ED/main.cpp
+CMakeFiles/Taller1.dir/main.cpp.obj: C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/main.cpp
 CMakeFiles/Taller1.dir/main.cpp.obj: CMakeFiles/Taller1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\GitHub\Proyectos\Taller1-ED\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Taller1.dir/main.cpp.obj"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Taller1.dir/main.cpp.obj -MF CMakeFiles\Taller1.dir\main.cpp.obj.d -o CMakeFiles\Taller1.dir\main.cpp.obj -c D:\GitHub\Proyectos\Taller1-ED\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Taller1.dir/main.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Taller1.dir/main.cpp.obj -MF CMakeFiles\Taller1.dir\main.cpp.obj.d -o CMakeFiles\Taller1.dir\main.cpp.obj -c "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\main.cpp"
 
 CMakeFiles/Taller1.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Taller1.dir/main.cpp.i"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub\Proyectos\Taller1-ED\main.cpp > CMakeFiles\Taller1.dir\main.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\main.cpp" > CMakeFiles\Taller1.dir\main.cpp.i
 
 CMakeFiles/Taller1.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Taller1.dir/main.cpp.s"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub\Proyectos\Taller1-ED\main.cpp -o CMakeFiles\Taller1.dir\main.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\main.cpp" -o CMakeFiles\Taller1.dir\main.cpp.s
 
 CMakeFiles/Taller1.dir/Cancion.cpp.obj: CMakeFiles/Taller1.dir/flags.make
-CMakeFiles/Taller1.dir/Cancion.cpp.obj: D:/GitHub/Proyectos/Taller1-ED/Cancion.cpp
+CMakeFiles/Taller1.dir/Cancion.cpp.obj: C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/Cancion.cpp
 CMakeFiles/Taller1.dir/Cancion.cpp.obj: CMakeFiles/Taller1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\GitHub\Proyectos\Taller1-ED\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Taller1.dir/Cancion.cpp.obj"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Taller1.dir/Cancion.cpp.obj -MF CMakeFiles\Taller1.dir\Cancion.cpp.obj.d -o CMakeFiles\Taller1.dir\Cancion.cpp.obj -c D:\GitHub\Proyectos\Taller1-ED\Cancion.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Taller1.dir/Cancion.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Taller1.dir/Cancion.cpp.obj -MF CMakeFiles\Taller1.dir\Cancion.cpp.obj.d -o CMakeFiles\Taller1.dir\Cancion.cpp.obj -c "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\Cancion.cpp"
 
 CMakeFiles/Taller1.dir/Cancion.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Taller1.dir/Cancion.cpp.i"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub\Proyectos\Taller1-ED\Cancion.cpp > CMakeFiles\Taller1.dir\Cancion.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\Cancion.cpp" > CMakeFiles\Taller1.dir\Cancion.cpp.i
 
 CMakeFiles/Taller1.dir/Cancion.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Taller1.dir/Cancion.cpp.s"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub\Proyectos\Taller1-ED\Cancion.cpp -o CMakeFiles\Taller1.dir\Cancion.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\Cancion.cpp" -o CMakeFiles\Taller1.dir\Cancion.cpp.s
 
 CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.obj: CMakeFiles/Taller1.dir/flags.make
-CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.obj: D:/GitHub/Proyectos/Taller1-ED/NodoDobleCircular.cpp
+CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.obj: C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/NodoDobleCircular.cpp
 CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.obj: CMakeFiles/Taller1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\GitHub\Proyectos\Taller1-ED\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.obj"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.obj -MF CMakeFiles\Taller1.dir\NodoDobleCircular.cpp.obj.d -o CMakeFiles\Taller1.dir\NodoDobleCircular.cpp.obj -c D:\GitHub\Proyectos\Taller1-ED\NodoDobleCircular.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.obj -MF CMakeFiles\Taller1.dir\NodoDobleCircular.cpp.obj.d -o CMakeFiles\Taller1.dir\NodoDobleCircular.cpp.obj -c "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\NodoDobleCircular.cpp"
 
 CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.i"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub\Proyectos\Taller1-ED\NodoDobleCircular.cpp > CMakeFiles\Taller1.dir\NodoDobleCircular.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\NodoDobleCircular.cpp" > CMakeFiles\Taller1.dir\NodoDobleCircular.cpp.i
 
 CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Taller1.dir/NodoDobleCircular.cpp.s"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub\Proyectos\Taller1-ED\NodoDobleCircular.cpp -o CMakeFiles\Taller1.dir\NodoDobleCircular.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\NodoDobleCircular.cpp" -o CMakeFiles\Taller1.dir\NodoDobleCircular.cpp.s
 
 CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.obj: CMakeFiles/Taller1.dir/flags.make
-CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.obj: D:/GitHub/Proyectos/Taller1-ED/ListaNodoCircularDoble.cpp
+CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.obj: C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/ListaNodoCircularDoble.cpp
 CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.obj: CMakeFiles/Taller1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\GitHub\Proyectos\Taller1-ED\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.obj"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.obj -MF CMakeFiles\Taller1.dir\ListaNodoCircularDoble.cpp.obj.d -o CMakeFiles\Taller1.dir\ListaNodoCircularDoble.cpp.obj -c D:\GitHub\Proyectos\Taller1-ED\ListaNodoCircularDoble.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.obj -MF CMakeFiles\Taller1.dir\ListaNodoCircularDoble.cpp.obj.d -o CMakeFiles\Taller1.dir\ListaNodoCircularDoble.cpp.obj -c "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\ListaNodoCircularDoble.cpp"
 
 CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.i"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub\Proyectos\Taller1-ED\ListaNodoCircularDoble.cpp > CMakeFiles\Taller1.dir\ListaNodoCircularDoble.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\ListaNodoCircularDoble.cpp" > CMakeFiles\Taller1.dir\ListaNodoCircularDoble.cpp.i
 
 CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Taller1.dir/ListaNodoCircularDoble.cpp.s"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub\Proyectos\Taller1-ED\ListaNodoCircularDoble.cpp -o CMakeFiles\Taller1.dir\ListaNodoCircularDoble.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\ListaNodoCircularDoble.cpp" -o CMakeFiles\Taller1.dir\ListaNodoCircularDoble.cpp.s
 
 CMakeFiles/Taller1.dir/Sistema.cpp.obj: CMakeFiles/Taller1.dir/flags.make
-CMakeFiles/Taller1.dir/Sistema.cpp.obj: D:/GitHub/Proyectos/Taller1-ED/Sistema.cpp
+CMakeFiles/Taller1.dir/Sistema.cpp.obj: C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/Sistema.cpp
 CMakeFiles/Taller1.dir/Sistema.cpp.obj: CMakeFiles/Taller1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\GitHub\Proyectos\Taller1-ED\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Taller1.dir/Sistema.cpp.obj"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Taller1.dir/Sistema.cpp.obj -MF CMakeFiles\Taller1.dir\Sistema.cpp.obj.d -o CMakeFiles\Taller1.dir\Sistema.cpp.obj -c D:\GitHub\Proyectos\Taller1-ED\Sistema.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Taller1.dir/Sistema.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Taller1.dir/Sistema.cpp.obj -MF CMakeFiles\Taller1.dir\Sistema.cpp.obj.d -o CMakeFiles\Taller1.dir\Sistema.cpp.obj -c "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\Sistema.cpp"
 
 CMakeFiles/Taller1.dir/Sistema.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Taller1.dir/Sistema.cpp.i"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\GitHub\Proyectos\Taller1-ED\Sistema.cpp > CMakeFiles\Taller1.dir\Sistema.cpp.i
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\Sistema.cpp" > CMakeFiles\Taller1.dir\Sistema.cpp.i
 
 CMakeFiles/Taller1.dir/Sistema.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Taller1.dir/Sistema.cpp.s"
-	"D:\JetBrains\CLion 2023.2.2\bin\mingw\bin\g++.exe" $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\GitHub\Proyectos\Taller1-ED\Sistema.cpp -o CMakeFiles\Taller1.dir\Sistema.cpp.s
+	C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\Sistema.cpp" -o CMakeFiles\Taller1.dir\Sistema.cpp.s
 
 # Object files for target Taller1
 Taller1_OBJECTS = \
@@ -158,7 +158,7 @@ Taller1.exe: CMakeFiles/Taller1.dir/build.make
 Taller1.exe: CMakeFiles/Taller1.dir/linkLibs.rsp
 Taller1.exe: CMakeFiles/Taller1.dir/objects1.rsp
 Taller1.exe: CMakeFiles/Taller1.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\GitHub\Proyectos\Taller1-ED\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Taller1.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Taller1.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Taller1.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -170,6 +170,6 @@ CMakeFiles/Taller1.dir/clean:
 .PHONY : CMakeFiles/Taller1.dir/clean
 
 CMakeFiles/Taller1.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\GitHub\Proyectos\Taller1-ED D:\GitHub\Proyectos\Taller1-ED D:\GitHub\Proyectos\Taller1-ED\cmake-build-debug D:\GitHub\Proyectos\Taller1-ED\cmake-build-debug D:\GitHub\Proyectos\Taller1-ED\cmake-build-debug\CMakeFiles\Taller1.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED" "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED" "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\cmake-build-debug" "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\cmake-build-debug" "C:\Users\srfue\Desktop\UCN\2023 2 Semestre\Estructura de Datos\Codigos\Talleres\Taller1-ED\cmake-build-debug\CMakeFiles\Taller1.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Taller1.dir/depend
 
