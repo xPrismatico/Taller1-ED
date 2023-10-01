@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include "Sistema.h"
 #include "ListaNodoCircularDoble.h"
+#include <stdexcept>
+#include <limits>
 
 Sistema::Sistema() {
 }
@@ -98,12 +100,22 @@ void Sistema::Agregar() {
             cin >> duracion;
 
             //TODO: Validar STRING como ints minutos segundos
-            int minutos;
-            int segundos;
-            stringstream input_ss(duracion);
-            input_ss >> minutos;
-            input_ss.ignore();
-            input_ss >> segundos;
+            int minutos = 0;
+            int segundos = 0;
+
+            //Validar INT
+            try{
+                stringstream input_ss(duracion);
+                input_ss >> minutos;
+                input_ss.ignore();
+                input_ss >> segundos;
+            }
+            catch(const exception& e){
+                cout<< "[!] Error: Ingresa los minutos y segundos en formato minutos:segundos !\n" << endl;
+                break;
+            }
+
+
             //int duracionInt = stoi(duracion);
 
             //to_string() //dato pasarlo a a String
@@ -130,35 +142,45 @@ void Sistema::Agregar() {
         //TODO: Hacer que se IMPRIMAN las Canciones de listaCanciones (Sistema) que NO ESTAN AÚN en listaReproducciones
         else if(opcion == "2"){
 
-            // IMPRIMIR LISTA CANCIONES DEL SISTEMA
-            for (int i=1; i<tamanioActual;i++){
-                cout << "\n[" << i << "]";
-                cout << "Nombre: " <<listaCanciones[i].getNombre()<<endl;
-                cout << "   Artista/s: " <<listaCanciones[i].getArtista()<<endl;
-                cout << "   Cantidad de reproducciones: " <<listaCanciones[i].getReproducciones()<<endl;
-                cout << "   Duracion: " <<listaCanciones[i].getDuracion()<<endl;
-            }
-
-
-            int posicionCancion;
-            cout << "\nIngresa el numero de la posicion de la cancion que quieres agregar a la lista de reproduccion: ";
-            cin >> posicionCancion;
-
-            //TODO: Falta VALIDAR el int si se ingresa STRING
-
-            if (posicionCancion >= tamanioActual || posicionCancion <= 0){
-                cout << "\n[!] Error: La posicion ingresada no se encuentra en la lista!\n"<<endl;
-            }
-
-            // AGREGAR CANCION DE SISTEMA A REPRODUCCIONES
-            for(int i=1; i<=tamanioActual-1; i++){
-                if (i == posicionCancion) { //compara la posicion de la cancion actual con la entregado por pantalla
-                    this->listaReproducciones.agregar(listaCanciones[posicionCancion]); // agrega la cancion que esta en una lista a la otra
-                    cout << "\nLa cancion "<<"[" << posicionCancion << "] " << listaReproducciones.getCabeza()->getCancion().getNombre() <<" ha sido agregada exitosamente\n" << endl;
-                    return;
+                // IMPRIMIR LISTA CANCIONES DEL SISTEMA
+                for (int i = 1; i < tamanioActual; i++) {
+                    cout << "\n[" << i << "]";
+                    cout << "Nombre: " << listaCanciones[i].getNombre() << endl;
+                    cout << "   Artista/s: " << listaCanciones[i].getArtista() << endl;
+                    cout << "   Cantidad de reproducciones: " << listaCanciones[i].getReproducciones() << endl;
+                    cout << "   Duracion: " << listaCanciones[i].getDuracion() << endl;
                 }
-                //avanza
-            }
+                int posicionCancion;
+                //Validar INT
+                try{
+                    cout<< "\nIngresa el numero de la posicion de la cancion que quieres agregar a la lista de reproduccion: ";
+                    cin >> posicionCancion;
+                    if (cin.fail()) {
+                        cin.clear(); // Limpiar el estado de error de cin
+                        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Descartar la entrada
+                        throw runtime_error("[!] Error: Ingresa una opcion valida !\n");
+                    }
+                }
+                catch(const exception& e){
+                    cout<< e.what() << endl;
+                    break;
+                }
+
+                if (posicionCancion >= tamanioActual || posicionCancion <= 0) {
+                    cout << "\n[!] Error: La posicion ingresada no se encuentra en la lista!\n" << endl;
+                }
+
+                // AGREGAR CANCION DE SISTEMA A REPRODUCCIONES
+                for (int i = 1; i <= tamanioActual - 1; i++) {
+                    if (i == posicionCancion) { //compara la posicion de la cancion actual con la entregado por pantalla
+                        this->listaReproducciones.agregar(listaCanciones[posicionCancion]); // agrega la cancion que esta en una lista a la otra
+                        cout << "\nLa cancion " << "[" << posicionCancion << "] "
+                             << listaReproducciones.getCabeza()->getCancion().getNombre()
+                             << " ha sido agregada exitosamente\n" << endl;
+                        return;
+                    }
+                    //avanza
+                }
         }
 
         // VOLVER AL MENU
@@ -181,8 +203,21 @@ void Sistema::eliminar() {
     }
 
     int posEliminar;
-    cout << "\nIngresa el numero de la posicion de la cancion a eliminar: ";
-    cin >> posEliminar;
+
+    //Validacion INT
+    try{
+        cout << "\nIngresa el numero de la posicion de la cancion a eliminar: ";
+        cin >> posEliminar;
+        if (cin.fail()) {
+            cin.clear(); // Limpiar el estado de error de cin
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Descartar la entrada
+            throw runtime_error("[!] Error: Ingresa una opcion valida !\n");
+        }
+    }
+    catch(const exception& e){
+        cout<< e.what() << endl;
+        return;
+    }
 
     if (posEliminar > listaReproducciones.getCantCanciones() || posEliminar <= 0){
         cout << "\n[!] Error: La posicion ingresada no se encuentra en la lista!\n"<< endl;
@@ -194,8 +229,20 @@ void Sistema::eliminar() {
 
 // FALTA
 void Sistema::guardarArchivo() {
+    ofstream archivoSalida;
 
+    archivoSalida.open("musica.txt");
 
+    for (int i=1 ; i<tamanioActual; i++){
+        string nombre = listaCanciones[i].getNombre();
+        string artista = listaCanciones[i].getArtista();
+        string reproducciones = listaCanciones[i].getReproducciones();
+        string duracion = listaCanciones[i].getDuracion();
+
+        //Le asignamos los datos que queremos guardar
+        archivoSalida << nombre << ";" << artista << ";" << reproducciones << ";" << duracion << "\n";
+    }
+    archivoSalida.close();
 
     cout << "Se han guardado los cambios del archivo de musica"<< endl;
 }

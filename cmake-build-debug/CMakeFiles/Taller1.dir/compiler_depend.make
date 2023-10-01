@@ -629,7 +629,8 @@ CMakeFiles/Taller1.dir/Sistema.cpp.obj: C:/Users/srfue/Desktop/UCN/2023\ 2\ Seme
   C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/Sistema.h \
   C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/Cancion.h \
   C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/ListaNodoCircularDoble.h \
-  C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/NodoDobleCircular.h
+  C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/NodoDobleCircular.h \
+  C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits
 
 CMakeFiles/Taller1.dir/main.cpp.obj: C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/main.cpp \
   C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/Sistema.h \
@@ -1129,3 +1130,5 @@ C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32
 C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/x86_64-w64-mingw32/include/sec_api/string_s.h:
 
 C:/Users/srfue/Desktop/UCN/2023\ 2\ Semestre/Estructura\ de\ Datos/Codigos/Talleres/Taller1-ED/Sistema.h:
+
+C:/Program\ Files/JetBrains/CLion\ 2023.2.2/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/limits:
