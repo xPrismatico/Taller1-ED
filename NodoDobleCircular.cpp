@@ -12,9 +12,6 @@ NodoDobleCircular::NodoDobleCircular(Cancion& cancion){
 }
 
 
-void NodoDobleCircular::setCancion(Cancion& cancion) {
-    this->cancion = cancion;
-}
 
 void NodoDobleCircular::setSiguiente(NodoDobleCircular* nodo) {
     this->siguiente = nodo;

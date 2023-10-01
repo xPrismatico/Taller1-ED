@@ -21,13 +21,6 @@ private:
 public:
 
     /**
-     * Metodo para reemplazar la cancion de un nodo por otra cancion ingresada
-     * @param cancion Nueva cancion se le establece al nodo que invoca este metodo
-     */
-    void setCancion(Cancion& cancion);
-
-
-    /**
      * Metodo para establecer a un nodo ingresado como siguiente a otro nodo
      * @param nodo Nodo que se establece como el siguiente al nodo que invoca este metodo
      */

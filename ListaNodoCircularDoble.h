@@ -64,11 +64,9 @@ public:
 
 
     /**
-     * Metodo para buscar una cancion por nombre en la lista reproduccion
-     * @param nombre Nombre de la cancion a buscar
-     * @return bool
+     * Metodo para destruir cada nodo de la lista de reproduccion y liberar memoria
      */
-    bool buscarNombre(string nombre);
+    void destruirLista();
 
 
     /**

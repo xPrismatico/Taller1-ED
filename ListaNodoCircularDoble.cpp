@@ -221,51 +221,29 @@ bool ListaNodoCircularDoble::mostrarLista() {
     return true;
 }
 
-
-/*
-int ListaNodoCircularDoble::mostrarPosicion() {
-    // Si no hay elementos en la lista
-    int posicion = 0;
-
+void ListaNodoCircularDoble::destruirLista(){
+    //Si la lista esta vacia
     if (this->cabeza == nullptr){
-        cout << "\n[!] Error: no se encuentran canciones en la lista de reproduccion\n" << endl;
-        return posicion;
+        return;
     }
-
-    // Si solo hay 1 elemento
-    if(this->cabeza->getSiguiente() == this->cabeza){
-        posicion = 1;
-        return posicion;
+    //Si solo hay 1 elemento
+    if (this->cabeza->getSiguiente() == this->cabeza){
+        delete this->cabeza;
+        this->cabeza = nullptr;
+        return;
     }
-
     // Si hay mas de 1 elemento
-    for(NodoDobleCircular* actual = this->cabeza; actual->getSiguiente() != this->cabeza; actual->getSiguiente())
-        posicion++;
-        actual = actual->getSiguiente(); //Avanza el auxiliar al siguiente
-    }
-    return false; //retorna false si no lo encuentra en la lista
 
-}
-*/
+    NodoDobleCircular* borrar = this->cabeza;
 
-
-bool ListaNodoCircularDoble::buscarNombre(string nombre) {
-    if(this->cabeza == nullptr){ // si la cabeza es nula
-        return false; // NO ESTÁ
+    while (borrar->getSiguiente() != this->cabeza){
+        NodoDobleCircular* aux = borrar->getSiguiente(); // Guarad referencia temporal al sgte nodo
+        delete borrar; // Libera la memoria del nodo actual
+        borrar = aux; // Avanza
     }
 
-    if(this->cabeza->getCancion().getNombre() == nombre){
-        return true; // SI ESTÁ
-    }
-
-    NodoDobleCircular* actual = this->cabeza; //auxiliar par arecorrer la lista
-    while(actual->getSiguiente() != this->cabeza){
-        actual = actual->getSiguiente(); //Avanza el auxiliar al siguiente
-        if(actual->getCancion().getNombre() == nombre){ //Comparo el nombre de la cancion del nodo actual sea igual a la entregada
-            return true; // SI ESTÁ
-        }
-    }
-    return false; //retorna false si no lo encuentra en la lista
+    delete borrar; // Libera el ultimo nodo
+    this->cabeza = nullptr; // cabeza sera nullptr indicando que esta vacia
 
 }
 

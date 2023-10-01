@@ -99,7 +99,7 @@ void Sistema::Agregar() {
             for(int i = 1; i<=tamanioActual-1; i++){
 
                 for (char c1: listaCanciones[i].getNombre() ){
-                    minusculaCancionI += static_cast<char>( tolower(c1) );
+                    minusculaCancionI += static_cast<char>( tolower( c1) );
                 }
 
                 if(minusculaCancionI == nombreCancionMinuscula ) {
@@ -139,28 +139,14 @@ void Sistema::Agregar() {
                 getline(input_ss, minString, ':'); // obtener primera parte (minutos) como String minString
                 getline(input_ss, segString, ':'); // obtener segunda parte (segundos) como String minString
 
-                // Aqui debiera fallar el codigo si se tratase de un String con letras
                 minutos = stoi(minString); // Casteo de minString a int
                 segundos = stoi(segString); // Casteo de minString a int
-
-                //input_ss >> minutos;
-                //input_ss.ignore();
-                //input_ss >> segundos;
-                //int minutosInt = stoi(minutos); // Tratar de convertirlo a int
 
             }
             catch(const exception& e){
                 cout<< "[!] Error: Ingresa los minutos y segundos en formato minutos:segundos !\n" << endl;
                 return;
             }
-
-            //int duracionInt = stoi(duracion);
-
-            //to_string() //dato pasarlo a a String
-            //duracion = stoi(duracionString);
-            //reproducciones = stoi(reproduString); // Siempre se lee en string y se pasa a int
-            //string duracion = (int)duracionMin + ":" + duracionSeg;
-
 
             Cancion* agregarCancion = new Cancion(nombreCancion, nombreArtista, reproducciones, duracion);
             tamanioActual++;
@@ -178,24 +164,12 @@ void Sistema::Agregar() {
         }
 
         // AGREGAR CANCION A LA LISTA REPRODUCCIONES
-        //TODO: Hacer que se IMPRIMAN las Canciones de listaCanciones (Sistema) que NO ESTAN AÚN en listaReproducciones
         else if(opcion == "2"){
 
                 // IMPRIMIR LISTA CANCIONES DEL SISTEMA
                 int n = 0;
                 for (int i = 1; i < tamanioActual; i++) {
 
-                    /*
-                    // Si la cancion en la pos i de la listaCanciones esta en la listaReproduccines, se imprime
-                    if (!listaReproducciones.buscarNombre( listaCanciones[i].getNombre() ) == true){
-                        n++;
-                        cout << "\n[" << n << "]";
-                        cout << "Nombre: " << listaCanciones[i].getNombre() << endl;
-                        cout << "   Artista/s: " << listaCanciones[i].getArtista() << endl;
-                        cout << "   Cantidad de reproducciones: " << listaCanciones[i].getReproducciones() << endl;
-                        cout << "   Duracion: " << listaCanciones[i].getDuracion() << endl;
-                    }
-                     */
                     cout << "\n[" << i << "]";
                     cout << "Nombre: " << listaCanciones[i].getNombre() << endl;
                     cout << "   Artista/s: " << listaCanciones[i].getArtista() << endl;
@@ -257,8 +231,7 @@ void Sistema::eliminar() {
 
     int posEliminar;
 
-    //Validacion INT
-    try{
+     try{
         cout << "\nIngresa el numero de la posicion de la cancion a eliminar: ";
         cin >> posEliminar;
         if (cin.fail()) {
@@ -298,6 +271,11 @@ void Sistema::guardarArchivo() {
     archivoSalida.close();
 
     cout << "\nSe han guardado los cambios del archivo de musica"<< endl;
+
+    listaReproducciones.destruirLista();
+    free(listaCanciones);
+    listaCanciones = nullptr;
+
 }
 
 
@@ -325,24 +303,12 @@ void Sistema::lecturaArchivo() {
         string reproducciones;
         string duracion;
 
-        stringstream input_ss(linea); //Opcional: Hacer otro stringstream para leer el String de duracion y partirlos por ':'
-        //Opcional: string como puntero o vector de char
-
+        stringstream input_ss(linea);
 
         getline(input_ss, nombre, ';');
         getline(input_ss, artista, ';');
         getline(input_ss, reproducciones, ';');
         getline(input_ss, duracion, ';');
-        //input_ss >> reproducciones;
-        //input_ss.ignore(); // parara ignorar el ; y no asignarlo dentro del duracion
-        //input_ss >> duracion;
-
-        //getline(input_ss, reproduccionString, ';'); // lo mismo
-        //getline(input_ss, duracionString, ';'); // duracionString
-
-        //to_string() //dato pasarlo a a String
-        //duracion = stoi(duracionString);
-        //reproducciones = stoi(reproduString); // Siempre se lee en string y se pasa a int
 
         if (this->tamanioActual == tamanio){
             tamanio += 10; //+10 al tamaño
@@ -352,10 +318,6 @@ void Sistema::lecturaArchivo() {
 
         // Crear una nueva Cancion con los datos de la linea
         Cancion* nuevaCancion = new Cancion(nombre,artista,reproducciones,duracion);
-
-        //tamanio++; // Variable para aumentar tamaño de la lista para guardarle espacio
-        // Redimensionar listaCanciones con el Nuevo tamanio
-        //listaCanciones = (Cancion*)realloc(listaCanciones,tamanio*sizeof(Cancion));
 
         // Guardar nueva Cancion en la listaCanciones
         listaCanciones[tamanioActual] = *nuevaCancion; // SE CAE

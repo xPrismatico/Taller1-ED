@@ -62,7 +62,7 @@ public:
     void eliminar();
 
     /**
-     * Metodo que sobreescribe el .txt cuando acaba el sistema
+     * Metodo que sobreescribe el .txt cuando acaba el sistema y libera la memoria utilizada
      */
     void guardarArchivo();
 
