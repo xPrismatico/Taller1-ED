@@ -1,5 +1,5 @@
 //
-// Created by srfue on 23/09/2023.
+// Clase NodoDobleCircular
 //
 #include "Cancion.h"
 #include "NodoDobleCircular.h"

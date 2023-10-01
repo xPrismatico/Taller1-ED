@@ -1,4 +1,6 @@
-
+//
+// Sistema
+//
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -7,11 +9,14 @@
 #include "ListaNodoCircularDoble.h"
 #include <stdexcept>
 #include <limits>
+#include <string>
+#include <cctype>
 
 Sistema::Sistema() {
 }
 
-//LISTO?
+
+
 void Sistema::menu(){
     lecturaArchivo();
 
@@ -44,7 +49,6 @@ void Sistema::menu(){
         }
         else if(Respuesta == "5") {
             guardarArchivo();
-
             cout << "\nHas salido del reproductor correctamente.\n";
             return;
         }
@@ -54,16 +58,18 @@ void Sistema::menu(){
     }
 }
 
-//LISTO
+
 void Sistema::Anterior() {
     this->listaReproducciones.moverAnterior();
 }
-//LISTO
+
+
 void Sistema::Siguiente() {
     this->listaReproducciones.moverSiguiente();
 }
 
-//FALTA?
+
+
 void Sistema::Agregar() {
     string opcion;
 
@@ -84,6 +90,26 @@ void Sistema::Agregar() {
             cout << "\nIngresa el nombre de la cancion: ";
             cin >> nombreCancion;
 
+            string nombreCancionMinuscula;
+            for (char c : nombreCancion){
+                nombreCancionMinuscula += static_cast<char>( tolower(c) );
+            }
+            string minusculaCancionI; // Cancion actual recorrida en la lista pasada a minusculas
+
+            for(int i = 1; i<=tamanioActual-1; i++){
+
+                for (char c1: listaCanciones[i].getNombre() ){
+                    minusculaCancionI += static_cast<char>( tolower(c1) );
+                }
+
+                if(minusculaCancionI == nombreCancionMinuscula ) {
+                    cout<<"[!] Error: El nombre de la cancion ingresada ya existe en el sistema"<<endl;
+                    return;
+                }
+
+                minusculaCancionI = "";
+            }
+
             // Nombre Artista
             string nombreArtista;
             cout << "\nIngresa el nombre del Artista (si es mas de 1, separalos por comas ','): ";
@@ -94,27 +120,39 @@ void Sistema::Agregar() {
             cout << "\nIngresa la cantidad de reproducciones: ";
             cin >> reproducciones;
 
-            // Duracion (min:seg)
+            // Duracion
             string duracion;
             cout << "\nIngresa los minutos y segundos de duracion de la cancion en el formato (mm:ss): "; //TODO: Hacer que tenga que contener ':' si o si ??
             cin >> duracion;
 
-            //TODO: Validar STRING como ints minutos segundos
             int minutos = 0;
             int segundos = 0;
 
             //Validar INT
             try{
-                stringstream input_ss(duracion);
-                input_ss >> minutos;
-                input_ss.ignore();
-                input_ss >> segundos;
+                string minString = to_string(minutos); // minutos 0 a minString "0"
+                string segString = to_string(segundos); // segundos 0 a segString "0"
+
+
+                stringstream input_ss(duracion); // string duracion a stringstream duracion (moldeable)
+
+                getline(input_ss, minString, ':'); // obtener primera parte (minutos) como String minString
+                getline(input_ss, segString, ':'); // obtener segunda parte (segundos) como String minString
+
+                // Aqui debiera fallar el codigo si se tratase de un String con letras
+                minutos = stoi(minString); // Casteo de minString a int
+                segundos = stoi(segString); // Casteo de minString a int
+
+                //input_ss >> minutos;
+                //input_ss.ignore();
+                //input_ss >> segundos;
+                //int minutosInt = stoi(minutos); // Tratar de convertirlo a int
+
             }
             catch(const exception& e){
                 cout<< "[!] Error: Ingresa los minutos y segundos en formato minutos:segundos !\n" << endl;
-                break;
+                return;
             }
-
 
             //int duracionInt = stoi(duracion);
 
@@ -125,8 +163,8 @@ void Sistema::Agregar() {
 
 
             Cancion* agregarCancion = new Cancion(nombreCancion, nombreArtista, reproducciones, duracion);
-
             tamanioActual++;
+
             // Redimensionar listaCanciones con el Nuevo tamanio
             listaCanciones = (Cancion*)realloc(listaCanciones,this->tamanioActual*sizeof(Cancion));
             // Guardar nueva Cancion en la listaCanciones
@@ -136,6 +174,7 @@ void Sistema::Agregar() {
             int espera = (((60*minutos)+segundos)/20);
             sleep(espera);
             cout << "\nLa cancion ha sido agregada al sistema con exito!" << endl;
+
         }
 
         // AGREGAR CANCION A LA LISTA REPRODUCCIONES
@@ -143,7 +182,20 @@ void Sistema::Agregar() {
         else if(opcion == "2"){
 
                 // IMPRIMIR LISTA CANCIONES DEL SISTEMA
+                int n = 0;
                 for (int i = 1; i < tamanioActual; i++) {
+
+                    /*
+                    // Si la cancion en la pos i de la listaCanciones esta en la listaReproduccines, se imprime
+                    if (!listaReproducciones.buscarNombre( listaCanciones[i].getNombre() ) == true){
+                        n++;
+                        cout << "\n[" << n << "]";
+                        cout << "Nombre: " << listaCanciones[i].getNombre() << endl;
+                        cout << "   Artista/s: " << listaCanciones[i].getArtista() << endl;
+                        cout << "   Cantidad de reproducciones: " << listaCanciones[i].getReproducciones() << endl;
+                        cout << "   Duracion: " << listaCanciones[i].getDuracion() << endl;
+                    }
+                     */
                     cout << "\n[" << i << "]";
                     cout << "Nombre: " << listaCanciones[i].getNombre() << endl;
                     cout << "   Artista/s: " << listaCanciones[i].getArtista() << endl;
@@ -195,7 +247,8 @@ void Sistema::Agregar() {
     }
 
 }
-//LISTO
+
+
 void Sistema::eliminar() {
     bool mostrar = this->listaReproducciones.mostrarLista(); //Muestra todas las canciones de la lista Reproduccion
     if (mostrar == false){
@@ -227,7 +280,7 @@ void Sistema::eliminar() {
 }
 
 
-// FALTA
+
 void Sistema::guardarArchivo() {
     ofstream archivoSalida;
 
@@ -244,14 +297,12 @@ void Sistema::guardarArchivo() {
     }
     archivoSalida.close();
 
-    cout << "Se han guardado los cambios del archivo de musica"<< endl;
+    cout << "\nSe han guardado los cambios del archivo de musica"<< endl;
 }
 
 
-/**
- * LECTURA DE ARCHIVO
- */
-//LISTO
+
+ //LECTURA DE ARCHIVO
 void Sistema::lecturaArchivo() {
     ifstream archivo;
     archivo.open("musica.txt"); // Abrir TXT

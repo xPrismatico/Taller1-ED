@@ -1,31 +1,87 @@
 //
-// Created by srfue on 23/09/2023.
+// Lista de reproduccion
 //
 
 #ifndef TALLER1_LISTANODOCIRCULARDOBLE_H
 #define TALLER1_LISTANODOCIRCULARDOBLE_H
 #include "NodoDobleCircular.h"
+#include <string>
 
 class ListaNodoCircularDoble {
 
 private:
+    /**
+     * Atributos de la clase lista nodo circular
+     */
     NodoDobleCircular* cabeza;
     int cantCanciones;
 
 public:
+
+    /**
+     * Constructor de la clase ListaNodoCircularDoble
+     */
     ListaNodoCircularDoble();
 
+
+    /**
+     * Metodo para mostrar el nombre y artista de la cancion anterior, actual y siguiente de la listaReproduccion
+     */
     void mostrarCanciones();
+
+
+    /**
+     * Metodo para agregar una cancion ingresada a la listaReproduccion mediante un nuevo nodo
+     * @param cancion Cancion que se va a agregar a la listaReproduccion dentro de un Nodo nuevo
+     */
     void agregar(Cancion& cancion);
+
+
+    /**
+     * Metodo para eliminar un nodo de la lista reproduccion segun su posicion en la lista
+     * @param posCancion posicion del nodo a eliminar
+     */
     void eliminar(int posCancion);
 
+
+    /**
+     * Metodo para mover referencia a la cabeza de la lista reproduccion al anterior nodo
+     */
     void moverAnterior();
+
+
+    /**
+     * Metodo para mover la referencia a la cabeza de la lista reproduccion al siguiente nodo
+     */
     void moverSiguiente();
 
-    bool mostrarLista();
-    bool buscar(int posicion);
 
+    /**
+     * Metodo para mostrar las canciones de la lista reproduccion
+     * @return bool
+     */
+    bool mostrarLista();
+
+
+    /**
+     * Metodo para buscar una cancion por nombre en la lista reproduccion
+     * @param nombre Nombre de la cancion a buscar
+     * @return bool
+     */
+    bool buscarNombre(string nombre);
+
+
+    /**
+     * get cantidad de  canciones de la lista reproduccion
+     * @return cantidad de canciones
+     */
     int getCantCanciones();
+
+
+    /**
+     *
+     * @return
+     */
     NodoDobleCircular* getCabeza();
 
 };
